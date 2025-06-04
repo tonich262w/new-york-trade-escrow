@@ -1,10 +1,10 @@
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import React from 'react';
+import Layout from "@/components/layout/Layout";
 import { Shield, Clock, FileText, Users, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const Services = () => {
+const Services: React.FC = () => {
   const services = [
     {
       icon: Shield,
@@ -55,24 +55,10 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header />
-      
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Nuestros Servicios</h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-8">
-              Servicios especializados de escrow para el sector inmobiliario vacacional
-            </p>
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
-              Solicitar Consulta Gratuita
-            </Button>
-          </div>
-        </div>
-      </section>
-
+    <Layout 
+      pageTitle="Nuestros Servicios"
+      pageDescription="Servicios especializados de escrow para el sector inmobiliario vacacional"
+    >
       {/* Main Services */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -189,9 +175,7 @@ const Services = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 
